@@ -10,24 +10,18 @@ goal_1 = 54
 
 scorers = nl_player_10 + ' ' + str(goal_0) + ', ' + nl_player_12 + ' ' + str(goal_1)
 
-report = f'{nl_player_10} scored in the {str(goal_0)}nd minute\n{nl_player_12} scored in the {str(goal_1)}th minute'
+report = f'{nl_player_10} scored in the {goal_0}nd minute\n{nl_player_12} scored in the {goal_1}th minute'
 
 print(report)
 
 # part 2
 
-player = 'Ronald Koeman'
-# index_first_name = nl_player_4.find("Ronald")
-# index_last_name = nl_player_4.find("Koeman")
-# index_first_name_end = index_last_name - 2
-# nl_player_4_first_name = nl_player_4[index_first_name:index_first_name_end]
-# nl_player_4_last_name = nl_player_4[index_last_name:]
-# But exercises must be single lines:
-first_name = player[player.find("Ronald"):6]
-last_name_len = len(player[player.find("Koeman"):])
-name_short = f'{first_name[:1]}. {player[player.find("Koeman"):]}'
+player = 'Frank de Boer'
+first_name = player[:player.find(" ")]
+last_name_len = len(player[player.find(" ")+1:])
+name_short = f'{player[0]}. {player[player.find(" ")+1:]}'
 chant = (f'{first_name}! ' * len(first_name)).strip()
-good_chant = chant[-1:] != '' 
+good_chant = chant[-1:] != ' ' 
 # good_chant = chant[-1:].isspace() == False
 
 print(first_name)
@@ -35,4 +29,4 @@ print(last_name_len)
 print(name_short)
 print(chant)
 print(good_chant)
-print(good_chant_2)
+# print(good_chant_2)
